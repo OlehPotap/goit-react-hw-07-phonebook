@@ -2,13 +2,14 @@ import styles from '../ContactsListItem/contacts-list-item.module.css';
 // import { delContact } from 'redux/form/formActions';
 import { delContactsList} from 'redux/form/formOperations';
 import { useSelector, useDispatch } from 'react-redux';
+import Selectors from 'redux/selectors';
 
 
 const ContactsList = () => {
   // const deleteItem = event =>{console.log(event)}
 
-  const filterValue = useSelector(state => state.filterValue)
-  const contactsNew = useSelector(state => state.contacts)
+  const filterValue = useSelector(Selectors.getFilterValue)
+  const contactsNew = useSelector(Selectors.getContacts)
   const dispatch = useDispatch()
 
   if (filterValue === '' || filterValue === undefined) {
