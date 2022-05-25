@@ -4,11 +4,12 @@ import { useState } from 'react';
 import { postContactsList } from 'redux/form/formOperations';
 import { useDispatch, useSelector } from 'react-redux';
 import Notiflix from 'notiflix';
+import Selectors from 'redux/selectors';
 
 
 const Form = () => {
 
-  const contactList = useSelector(state => state.contacts)
+  const contactList = useSelector(Selectors.getContacts)
 
 
   const dispatch = useDispatch()
